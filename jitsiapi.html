@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src='https://meet.jit.si/external_api.js'></script>
+</head>
+<body>
+<center>
+<h1>Saluton!</h1>
+Alklaku la butonon "Starto", por partopreni en konferenco per Jitsi; konferencnomo: TenderReductionsReplySometimes.<br>
+Alternative eblas partopreni per <a href="https://jitsi.org/#download" target="_blank">apo</a> au nur <a href="https://meet.jit.si/static/dialInInfo.html?room=TenderReductionsReplySometimes" target="_blank">per telefona konekto</a>.</br></br>
+<button id="start" type="button">Starto</button>
+<div id="jitsi-container"></div>
+</center>
+
+<script>
+var button = document.querySelector('#start');
+var container = document.querySelector('#jitsi-container');
+var api = null;
+
+button.addEventListener('click', () => {
+    var domain = "meet.jit.si";
+    var options = {
+        "roomName": "TenderReductionsReplySometimes",
+        "parentNode": container,
+        "width": 700,
+        "height": 700,
+    };
+    api = new JitsiMeetExternalAPI(domain, options);
+});
