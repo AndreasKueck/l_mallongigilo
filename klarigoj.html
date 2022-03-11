@@ -6,8 +6,9 @@
 </head>
 
 <body>
-La ligil-mallongigilo <a href="https://jhau.de">https://jhau.de</a> estas test-versio, bazighas sur la instruoj donitaj en la artikolo "<a href="https://www.ilovefreesoftware.com/17/tutorial/create-free-url-shortener-using-google-apps-script-github-pages.html" target="_blank">CREATE A FREE URL SHORTENER USING GOOGLE APPS SCRIPT AND GITHUB PAGES</a>" kaj estas funkciigata de Andreas K&uuml;ck; jen <a href="https://jhau.de/klarigoj2.html">kontakto</a> (igu vian retumilon montri la labortablan version). Estas nenia garantio pri la funkciado, kaj utiligado okazas je la propra risko de la uzanto.<br>
-Noto: En 2020-03-10 mi konstatis, ke ne plu funkcias la plusendo al la longa URL. Mi trovis jenan provizoran solvon:<br>
+La ligil-mallongigilo <a href="https://jhau.de">https://jhau.de</a> estas test-versio, bazighas sur la instruoj donitaj en la artikolo "<a href="https://www.ilovefreesoftware.com/17/tutorial/create-free-url-shortener-using-google-apps-script-github-pages.html" target="_blank">CREATE A FREE URL SHORTENER USING GOOGLE APPS SCRIPT AND GITHUB PAGES</a>" kaj estas funkciigata de Andreas K&uuml;ck; jen <a href="https://jhau.de/klarigoj2.html">kontakto</a> (igu vian retumilon montri la labortablan version). Estas nenia garantio pri la funkciado, kaj utiligado okazas je la propra risko de la uzanto.<br><br>
+Noto:<br>
+En 2020-03-10 mi konstatis, ke ne plu funkcias la plusendo al la longa URL. Mi trovis jenan provizoran solvon:<br>
 En skripto-dosiero Code.gs mi anstatauigis
 <pre>var html = "&lt;script&gt;window.open('" + redirectURL + "','_top');</pre>
 <pre>&lt;/script&gt;"; return HtmlService.createHtmlOutput(html).setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL).setTitle('Redirecting...');</pre>
