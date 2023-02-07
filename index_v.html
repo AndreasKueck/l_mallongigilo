@@ -5,7 +5,7 @@
 <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/vosk-browser@0.0.5/dist/vosk.js"></script>
 <script>
 async function init() {
-    const model = await Vosk.createModel('https://github.com/AndreasKueck/vosk-browser/blob/master/examples/react/public/models/vosk-model-small-eo-0.42.tar.gz');
+    const model = await Vosk.createModel('eo');
 
     const recognizer = new model.KaldiRecognizer();
     recognizer.on("result", (message) => {
