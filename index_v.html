@@ -9,11 +9,11 @@ async function init() {
 
     const recognizer = new model.KaldiRecognizer();
     recognizer.on("result", (message) => {
-        console.log("Rezulto:");
+        console.log(5+6);
         console.log(`Result: ${message.result.text}`);
      });
     recognizer.on("partialresult", (message) => {
-        console.log("Parta rezulto:");
+        console.log(5+7);
         console.log(`Partial result: ${message.result.partial}`);
      });
     
