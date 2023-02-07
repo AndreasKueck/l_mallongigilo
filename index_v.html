@@ -1,47 +1,19 @@
 <!doctype html>
 <html>
-<body>
-<h1>Vocho-al-teksto-transskribo</h1>
-<script type="application/javascript" src="https://cdn.jsdelivr.net/npm/vosk-browser@0.0.5/dist/vosk.js"></script>
-<script>
-async function init() {
-    const model = await Vosk.createModel('vosk-model-small-eo-0.42.tar.gz');
-
-    const recognizer = new model.KaldiRecognizer();
-    recognizer.on("result", (message) => {
-        console.log(5+6);
-        console.log(`Result: ${message.result.text}`);
-     });
-    recognizer.on("partialresult", (message) => {
-        console.log(5+7);
-        console.log(`Partial result: ${message.result.partial}`);
-     });
-    
-    const mediaStream = await navigator.mediaDevices.getUserMedia({
-        video: false,
-        audio: {
-            echoCancellation: true,
-            noiseSuppression: true,
-            channelCount: 1,
-            sampleRate: 16000
-        },
-    });
-    
-    const audioContext = new AudioContext();
-    const recognizerNode = audioContext.createScriptProcessor(4096, 1, 1)
-    recognizerNode.onaudioprocess = (event) => {
-        try {
-            recognizer.acceptWaveform(event.inputBuffer)
-        } catch (error) {
-            console.error('acceptWaveform failed', error)
-        }
-    }
-    const source = audioContext.createMediaStreamSource(mediaStream);
-    source.connect(recognizerNode);
+<style>
+vosk-recognizer {
+    --font-size: 2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    font-family: sans-serif;
+    left: 50%;
+    padding: .5rem;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
-
-window.onload = init;
-</script>
-
-</body>
+</style>
+<vosk-recognizer model-url="https://github.com/AndreasKueck/vosk-browser/blob/master/examples/react/public/models/vosk-model-small-eo-0.42.tar.gz" oneshot></vosk-recognizer>
+<script src="https://dtreskunov.github.io/tiny-kaldi/VoskJS.js"></script>
 </html>
