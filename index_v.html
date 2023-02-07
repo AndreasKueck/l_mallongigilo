@@ -10,11 +10,11 @@ async function init() {
     const recognizer = new model.KaldiRecognizer();
     recognizer.on("result", (message) => {
         console.log(`Result: ${message.result.text}`);
-        document.write(`Result: ${message.result.text}`);
+        document.write('Rezulto: ' + `Result: ${message.result.text}`);
     });
     recognizer.on("partialresult", (message) => {
         console.log(`Partial result: ${message.result.partial}`);
-        document.write(`Partial result: ${message.result.partial}`);
+        document.write('Parta rezulto: ' + `Partial result: ${message.result.partial}`);
     });
     
     const mediaStream = await navigator.mediaDevices.getUserMedia({
